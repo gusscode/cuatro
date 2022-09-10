@@ -21,7 +21,7 @@ class ServerPrincipal {
   }
   // Listen on port 3000
   listen() {
-    return this.server.listen(3001, () => console.log("Listen on port 3000"));
+    return this.server.listen(3000, () => console.log("Listen on port 3000"));
   }
 
   async routes() {
