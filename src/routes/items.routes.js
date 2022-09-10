@@ -34,7 +34,7 @@ class IndexRoutes {
     
         const item = new itemModel(itemPrev)
         const result = await item.save()
-        console.log(result)
+        //console.log(result)
         res.json(result)
     }
     async readAll(req = request , res = response){
@@ -58,20 +58,20 @@ class IndexRoutes {
 
     async delete(req = request , res = response){
         const item = await itemModel.findByIdAndDelete(req.params.id)
-        console.log(item);
+        //console.log(item);
         res.json(item)
     }
 
     async readAllbyDate  (req = request , res = response) {
         const {date} = req.body
-        console.log(date);
+        //console.log(date);
         const fecha = new Date(date)
     
         const items = await itemModel.find({createdAt: {$gte: new Date().setHours(0,0,0)}})
-        console.log(items)
+        //console.log(items)
         const fechhhh = new Date()
-        console.log(fechhhh.setHours(0,0,0));
-        console.log(new Date(fechhhh));
+        //console.log(fechhhh.setHours(0,0,0));
+        //console.log(new Date(fechhhh));
         res.json(items)
     }
 
