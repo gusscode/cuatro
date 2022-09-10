@@ -31,7 +31,7 @@ class IndexRoutes {
         res.send("Hola mundo desde la clase rutas")
     }
     get2(req = request , res = response){
-        res.send("Hola mundo desde la clase rutas 2")
+        res.send("Hola chanchito feliz, bueno ya no tan chanchito")
     }
 }
 
