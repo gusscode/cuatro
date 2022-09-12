@@ -13,7 +13,7 @@ Router.get("/", indexControllers.index)
 module.exports = Router */
 
 const express = require("express")
-const {request, response} = require("express")
+//const {request, response} = require("express")
 
 class IndexRoutes {
     constructor(){
@@ -27,10 +27,10 @@ class IndexRoutes {
         return this.router;
     }
 
-    get(req = request , res = response){
+    get(req /* = request */ , res /* = response */){
         res.send("Hola mundo desde la clase rutas")
     }
-    get2(req = request , res = response){
+    get2(req /* = request */ , res /* = response */){
         res.send("Hola chanchito feliz, bueno ya no tan chanchito")
     }
 }

@@ -1,5 +1,5 @@
 const express = require("express")
-const {request, response} = require("express")
+//const {request, response} = require("express")
 const itemModel = require("../models/Item")
 const moment = require("moment")
 
@@ -26,7 +26,7 @@ class IndexRoutes {
         return this.router;
     }
 
-    async create(req = request , res = response){
+    async create(req /* = request */ , res /* = response */){
         const {imagen, tipo, precio, autos, pagado, id_lavador, id_cliente} = req.body
         const itemPrev = {
         imagen, tipo, precio, autos, pagado, id_lavador, id_cliente
@@ -37,16 +37,16 @@ class IndexRoutes {
         //console.log(result)
         res.json(result)
     }
-    async readAll(req = request , res = response){
+    async readAll(req /* = request */ , res /* = response */){
         const items = await itemModel.find({})
         res.json(items)
     }
 
-    async readOne(req = request , res = response){
+    async readOne(req /* = request */ , res /* = response */){
         
     }
 
-    async update(req = request , res = response){
+    async update(req /* = request */ , res /* = response */){
         const {imagen, tipo, precio, autos, pagado, id_lavador, id_cliente, _id} = req.body
         const updatedAt = moment().format()
         const itemPrev = {
@@ -56,13 +56,13 @@ class IndexRoutes {
         res.json(item)
     }
 
-    async delete(req = request , res = response){
+    async delete(req /* = request */ , res /* = response */){
         const item = await itemModel.findByIdAndDelete(req.params.id)
         //console.log(item);
         res.json(item)
     }
 
-    async readAllbyDate  (req = request , res = response) {
+    async readAllbyDate  (req /* = request */ , res /* = response */) {
         const {date} = req.body
         //console.log(date);
         const fecha = new Date(date)
@@ -75,10 +75,10 @@ class IndexRoutes {
         res.json(items)
     }
 
-    async get(req = request , res = response){
+    async get(req /* = request  */, res /* = response */){
         res.send("Hola mundo desde la clase quizes")
     }
-    async getId(req = request , res = response){
+    async getId(req /* = request */ , res /* = response */){
         res.send("Hola mundo desde la clase quizes: " + req.params.id)
     }
     
